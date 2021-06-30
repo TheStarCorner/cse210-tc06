@@ -2,7 +2,6 @@ from game.code import Code
 from game.guess import Guess
 
 class Player:
-
     def __init__(self, name):
         self._name = name
         self._code = Code()
@@ -26,6 +25,7 @@ class Player:
         return self._code.check_guess(self._guess)
     
     def has_won(self):
+
         return self._code.is_correct_guess(self._guess)
 
     """A person taking part in a game. The responsibility of Player is to keep track of their identity and last move.
@@ -88,3 +88,6 @@ class Player:
     def has_won(self):
 
         return self.code.is_correct_guess(self._guess)
+
+        return self._code.is_correct_guess(self._guess)
+

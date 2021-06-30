@@ -1,4 +1,3 @@
-
 from game.console import Console
 from game.roster import Roster
 from game.guess import Guess
@@ -47,12 +46,22 @@ class Director:
         self._prepare_game()
         while self._keep_playing:
 
+
+    
+    def start_game(self):
+        self._prepare_game()
+        while self.keep_playing:
+
             self._get_inputs()
             self._do_updates()
             self._do_outputs()
 
+
     def _prepare_game(self, roster):
 
+
+    def _prepare_game(self):
+    
         self.roster.add_player(Player(self.console.read("Enter player 1's name: ")))
         self.roster.add_player(Player(self.console.read("Enter player 2's name: ")))
         i = 3
@@ -87,6 +96,7 @@ class Director:
         if self.roster.get_current().has_won():
             self.keep_playing = False
             self.console.write("Congratulations " + self.roster.get_current().get_name() + ", you have won!")
+
         self.roster.next_player()
 
         """Prepares the game before it begins. In this case, that means getting the player names and adding them to the roster.
@@ -149,4 +159,7 @@ class Director:
 
      
        
+
+
+        self.roster.next_player()
 
