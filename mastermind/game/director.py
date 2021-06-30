@@ -10,31 +10,22 @@ class Director:
         self.roster = Roster()
         self.keep_playing = True
         self.guess = None
-    
-    def start_game(self):
-        self._prepare_game()
-        while self.keep_playing:
-=======
-from game.board import Board
-from game.console import Console
-from game.move import Move
-from game.player import Player
-from game.roster import Roster
 
-class Director:
-    """A code template for a person who directs the game. The responsibility of 
-    this class of objects is to control the sequence of play.
-    
-    Stereotype:
-        Controller
 
-    Attributes:
-        board (Hunter): An instance of the class of objects known as Board.
-        console (Console): An instance of the class of objects known as Console.
-        keep_playing (boolean): Whether or not the game can continue.
-        move (Rabbit): An instance of the class of objects known as Move.
-        roster (Roster): An instance of the class of objects known as Roster.
-    """
+# class Director:
+#     """A code template for a person who directs the game. The responsibility of 
+#     this class of objects is to control the sequence of play.
+    
+#     Stereotype:
+#         Controller
+
+#     Attributes:
+#         board (Hunter): An instance of the class of objects known as Board.
+#         console (Console): An instance of the class of objects known as Console.
+#         keep_playing (boolean): Whether or not the game can continue.
+#         move (Rabbit): An instance of the class of objects known as Move.
+#         roster (Roster): An instance of the class of objects known as Roster.
+#     """
 
     def __init__(self):
         """The class constructor.
@@ -60,7 +51,7 @@ class Director:
             self._do_updates()
             self._do_outputs()
 
-    def _prepare_game(self):
+    def _prepare_game(self, roster):
 
         self.roster.add_player(Player(self.console.read("Enter player 1's name: ")))
         self.roster.add_player(Player(self.console.read("Enter player 2's name: ")))
@@ -97,7 +88,7 @@ class Director:
             self.keep_playing = False
             self.console.write("Congratulations " + self.roster.get_current().get_name() + ", you have won!")
         self.roster.next_player()
-=======
+
         """Prepares the game before it begins. In this case, that means getting the player names and adding them to the roster.
         
         Args:

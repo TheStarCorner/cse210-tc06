@@ -6,7 +6,6 @@ class Guess:
         return self._guess
     def set_guess(self, guess):
         self._guess = guess
-=======
     ''' 
         guess will get_guess and set_guess
 

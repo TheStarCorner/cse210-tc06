@@ -27,7 +27,6 @@ class Player:
     
     def has_won(self):
         return self._code.is_correct_guess(self._guess)
-=======
 
     """A person taking part in a game. The responsibility of Player is to keep track of their identity and last move.
    
